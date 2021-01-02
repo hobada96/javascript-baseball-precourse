@@ -14,7 +14,13 @@ const makeComputerInputNumbers = (repeat) => {
       const randomNum = makeRandomNumber(1,10);
       !computerInputNumbers.some((number) => number === randomNum) && computerInputNumbers.push(randomNum)
     }
-    alert(computerInputNumbers)
+    return computerInputNumbers;
 }
 
-makeComputerInputNumbers(3);
+// const computerInputNumbers = makeComputerInputNumbers(3);
+// const userInputNumbers = document.getElementById(user-input)
+document.getElementById("submit").onclick = ()=>{
+    if(document.getElementById("user-input").value.length === 3) {
+        alert(document.getElementById("user-input").value.length);
+    }
+}
