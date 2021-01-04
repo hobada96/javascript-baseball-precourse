@@ -17,10 +17,28 @@ const makeComputerInputNumbers = (repeat) => {
     return computerInputNumbers;
 }
 
-// const computerInputNumbers = makeComputerInputNumbers(3);
-// const userInputNumbers = document.getElementById(user-input)
+const compareNumbers = (computerInputnumbers, userInputNumbers) =>{
+    let ball = 0;
+    let strike = 0;
+
+    for(let i=0;i<computerInputnumbers.length; i++){
+        if(Number(computerInputnumbers[i]) === Number(userInputNumbers[i])){
+            strike++;
+        }
+        else if(computerInputnumbers.includes(Number(userInputNumbers[i]))){
+            ball++;
+        }
+    }
+    alert([computerInputnumbers,userInputNumbers])
+    alert(strike);
+    alert(ball);
+    return [strike,ball];
+}
+
+const computerInputNumbers = makeComputerInputNumbers(3);
 document.getElementById("submit").onclick = ()=>{
     if(document.getElementById("user-input").value.length === 3) {
-        alert(document.getElementById("user-input").value.length);
+        let [strike,ball] = compareNumbers(computerInputNumbers,document.getElementById("user-input").value);
+        document.getElementById("result").innerHTML = strike + "스트라이크" + ball + "볼";
     }
 }
